@@ -404,12 +404,12 @@
         <repository>
             <id>nexus-releases</id>
             <name>gjk_repostiory-releases</name>
-            <url>http://172.16.98.176:8081/nexus/content/repositories/releases/</url>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <name>gjk_repostiory-snapshots</name>
-            <url>http://172.16.98.176:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
