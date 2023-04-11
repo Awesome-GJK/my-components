@@ -21,11 +21,11 @@
 ### step2：配置
 ```properties
 # 开启 controller 切面日志
-ykc.log.controller.enable=true
-ykc.log.controller.ignore-get-method=false
-ykc.log.controller.record-response=true
+gjk.log.controller.enable=true
+gjk.log.controller.ignore-get-method=false
+gjk.log.controller.record-response=true
 # 开启自定义 feign 日志
-ykc.log.feign.enable=true
+gjk.log.feign.enable=true
 # feign 原生配置
 feign.client.config.default.logger-level=FULL
 ```
@@ -39,14 +39,14 @@ feign.client.config.default.logger-level=FULL
 - 日志级别动态调整
   - 在对应 nacos 配置文件中直接改即可，例如：
 ```properties
-logging.level.com.ykc=INFO
+logging.level.com.gjk=INFO
 ```
 ## 4 附录-自定义配置说明
 
 | 属性                                     | 默认值   | 说明                   |
 |----------------------------------------|-------|----------------------|
-| `ykc.log.controller.enable`            | false | 是否开启 controller 日志切面 |
-| `ykc.log.controller.ignore-get-method` | true  | 是否忽略 GET 请求的日志       |
-| `ykc.log.controller.record-response`   | false | 日志是否记录返回参数           |
-| `ykc.log.feign.enable`                 | false | 是否开启自定义 Feign 日志     |
-| `ykc.log.feign.record-response`        | false | 日志是否记录返回参数           |
+| `gjk.log.controller.enable`            | false | 是否开启 controller 日志切面 |
+| `gjk.log.controller.ignore-get-method` | true  | 是否忽略 GET 请求的日志       |
+| `gjk.log.controller.record-response`   | false | 日志是否记录返回参数           |
+| `gjk.log.feign.enable`                 | false | 是否开启自定义 Feign 日志     |
+| `gjk.log.feign.record-response`        | false | 日志是否记录返回参数           |
