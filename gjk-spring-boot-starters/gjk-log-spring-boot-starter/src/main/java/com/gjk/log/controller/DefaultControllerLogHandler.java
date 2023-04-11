@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  * @description:
  */
 @Slf4j
-public class DefaultControllerLogHandler implements ControllerLogHandler{
+public class DefaultControllerLogHandler implements ControllerLogHandler {
     @Override
     public void handle(ControllerLog requestLog, LogProperties.ControllerConfig config) {
         if (HttpMethod.GET.name().equals(requestLog.getHttpMethod())) {

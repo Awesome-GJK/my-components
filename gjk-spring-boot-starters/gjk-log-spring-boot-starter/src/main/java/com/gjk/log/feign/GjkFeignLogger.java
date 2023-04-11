@@ -24,10 +24,11 @@ import static feign.Util.decodeOrDefault;
  * @description:
  */
 @RequiredArgsConstructor
-public class GjkFeignLogger extends feign.Logger{
+public class GjkFeignLogger extends feign.Logger {
 
     private final Logger logger;
     private final LogProperties.FeignConfig feignConfig;
+
     @Override
     protected void log(String s, String s1, Object... objects) {
 
@@ -97,5 +98,6 @@ public class GjkFeignLogger extends feign.Logger{
     protected IOException logIOException(String configKey, Level logLevel, IOException ioe, long elapsedTime) {
         String tag = methodTag(configKey);
         logger.error("{}cost: {}ms, errMsg: {}: {}", tag, elapsedTime, ioe.getClass(), ioe.getMessage());
-        return ioe;    }
+        return ioe;
+    }
 }

@@ -49,13 +49,13 @@ public class ControllerLogAspect {
         StopWatch watch = new StopWatch();
         watch.start();
         try {
-            result =  joinPoint.proceed();
+            result = joinPoint.proceed();
             watch.stop();
             return result;
         } finally {
             try {
                 doLog(joinPoint, result, watch.getTotalTimeMillis());
-            } catch (Exception e){
+            } catch (Exception e) {
                 log.error("Controller 请求日志埋点失败，errMsg：{}", e.getMessage(), e);
             }
         }
@@ -69,7 +69,7 @@ public class ControllerLogAspect {
      * @param time
      */
     private void doLog(ProceedingJoinPoint joinPoint, Object res, long time) {
-        MethodSignature signature = (MethodSignature)joinPoint.getSignature();
+        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String apiClassMethodName = signature.getDeclaringTypeName() + "." + signature.getName();
         String reqParam = getReqParam(signature.getParameterNames(), joinPoint.getArgs());
 
@@ -99,20 +99,20 @@ public class ControllerLogAspect {
      * 获取入参
      *
      * @param argNames 方法参数名称数组
-     * @param args 方法参数数组
+     * @param args     方法参数数组
      * @return 返回处理后的描述
      */
     private String getReqParam(String[] argNames, Object[] args) {
-        if(null == argNames || null == args) {
+        if (null == argNames || null == args) {
             return "";
         }
         Map<Object, Object> map = new HashMap<>();
-        for(int i = 0; i < argNames.length; i++){
+        for (int i = 0; i < argNames.length; i++) {
             //剔除不用打印的参数
-            if(args[i] instanceof HttpServletRequest || args[i] instanceof HttpServletResponse || args[i] instanceof MultipartFile) {
+            if (args[i] instanceof HttpServletRequest || args[i] instanceof HttpServletResponse || args[i] instanceof MultipartFile) {
                 continue;
             }
-            map.put(argNames[i],args[i]);
+            map.put(argNames[i], args[i]);
         }
         return JSON.toJSONString(map);
     }
