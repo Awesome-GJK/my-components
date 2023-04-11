@@ -60,6 +60,8 @@
         <xstream.version>1.4.20</xstream.version>
         <log4j.version>2.17.1</log4j.version>
         <jersey.version>1.19.4</jersey.version>
+        <cos_api.version>5.6.45</cos_api.version>
+        <esdk-obs-java.version>3.21.4</esdk-obs-java.version>
     </properties>
 
     <dependencyManagement>
@@ -331,6 +333,17 @@
                 <groupId>com.sun.jersey.contribs</groupId>
                 <artifactId>jersey-apache-client4</artifactId>
                 <version>${jersey.version}</version>
+            </dependency>
+            <!-- 第三方对象存储依赖 -->
+            <dependency>
+                <groupId>com.qcloud</groupId>
+                <artifactId>cos_api</artifactId>
+                <version>${cos_api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.huaweicloud</groupId>
+                <artifactId>esdk-obs-java</artifactId>
+                <version>${esdk-obs-java.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

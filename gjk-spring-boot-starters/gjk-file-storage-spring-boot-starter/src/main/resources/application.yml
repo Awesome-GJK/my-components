@@ -1,0 +1,10 @@
+custom:
+  storage:
+    type: oss
+    config:
+      domain: domainUrl
+      https: true
+      endpoint: endPoint
+      access-key: accessKey
+      secret-key: secretKey
+      bucket-name: bucketName

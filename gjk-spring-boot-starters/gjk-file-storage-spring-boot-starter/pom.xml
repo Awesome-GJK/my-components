@@ -9,8 +9,9 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gjk-log-spring-boot-starters</artifactId>
-    <description>日志组件</description>
+    <artifactId>gjk-file-storage-spring-boot-starter</artifactId>
+    <description>文件存储组件</description>
+
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,35 +20,33 @@
     </properties>
 
     <dependencies>
-        <!-- 三方依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <!-- 自定义 feign 日志依赖-->
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-core</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-openfeign-core</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!-- arms 上线之前，先使用 sleuth 做链路追踪-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 第三方对象存储依赖 -->
+        <dependency>
+            <groupId>com.qcloud</groupId>
+            <artifactId>cos_api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.huaweicloud</groupId>
+            <artifactId>esdk-obs-java</artifactId>
         </dependency>
     </dependencies>
 
