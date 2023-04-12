@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.gjk.log.config.ControllerLogAutoConfiguration,\
-com.gjk.log.config.GjkFeignLogAutoConfiguration
+com.gjk.log.ControllerLogAutoConfiguration,\
+com.gjk.log.GjkFeignLogAutoConfiguration
 

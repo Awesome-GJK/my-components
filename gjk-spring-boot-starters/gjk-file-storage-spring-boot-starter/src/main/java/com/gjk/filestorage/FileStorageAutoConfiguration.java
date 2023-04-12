@@ -1,10 +1,12 @@
-package com.gjk.filestorage.config;
+package com.gjk.filestorage;
 
 import java.util.Optional;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+import com.gjk.filestorage.config.FileStorageProperties;
 import com.gjk.filestorage.core.FileStorage;
 import com.gjk.filestorage.core.storage.AliOssStorage;
 import com.gjk.filestorage.core.storage.HaWeiObsStorage;
@@ -20,6 +22,7 @@ import com.gjk.filestorage.exception.FileStorageException;
  * @date: 2023/3/9 11:50
  * @description:
  */
+@Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(FileStorageProperties.class)
 public class FileStorageAutoConfiguration {
 

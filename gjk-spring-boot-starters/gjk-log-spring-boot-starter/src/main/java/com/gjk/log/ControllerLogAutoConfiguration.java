@@ -1,10 +1,12 @@
-package com.gjk.log.config;
+package com.gjk.log;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+import com.gjk.log.config.LogProperties;
 import com.gjk.log.controller.ControllerLogAspect;
 import com.gjk.log.controller.ControllerLogHandler;
 import com.gjk.log.controller.DefaultControllerLogHandler;
@@ -16,18 +18,18 @@ import com.gjk.log.controller.DefaultControllerLogHandler;
  * @date: 2023/4/11 9:41
  * @description:
  */
+@Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(LogProperties.class)
+@ConditionalOnProperty(prefix = "gjk.log", name = "controller.enable", havingValue = "true")
 public class ControllerLogAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(ControllerLogHandler.class)
-    @ConditionalOnProperty(name = "gjk.log.controller.enable", havingValue = "true")
     public ControllerLogHandler requestLogHandler() {
         return new DefaultControllerLogHandler();
     }
 
     @Bean
-    @ConditionalOnProperty(name = "gjk.log.controller.enable", havingValue = "true")
     public ControllerLogAspect controllerLogAspect(ControllerLogHandler logHandler, LogProperties properties) {
         return new ControllerLogAspect(logHandler, properties.getController());
     }
