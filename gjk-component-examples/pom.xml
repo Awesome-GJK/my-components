@@ -7,22 +7,15 @@
         <groupId>com.gjk</groupId>
         <artifactId>gjk-common-dependencies</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../gjk-dependencies-parent/gjk-common-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>gjk-spring-boot-starters</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>gjk-file-storage-spring-boot-starter</module>
-        <module>gjk-http-spring-boot-starter</module>
-        <module>gjk-log-spring-boot-starter</module>
-    </modules>
+    <artifactId>gjk-component-examples</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 
 </project>
